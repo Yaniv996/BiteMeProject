@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="1010.0" style="-fx-background-color: rgba(223, 255, 255, 0.5)rgba(223, 255, 255, 0.5);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SelectFromRestMenuController">
+   <children>
+      <Pane prefHeight="880.0" prefWidth="1010.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="269.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@BiteMeSmall.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="297.0" layoutY="81.0" prefHeight="86.0" prefWidth="399.0" text="Create New Order" textFill="#8160ff">
+               <font>
+                  <Font name="Segoe UI Bold" size="46.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#00000040" height="5.0" radius="2.0" width="5.0" />
+               </effect>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="287.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@menu.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="176.0" layoutY="185.0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: rgba(97, 56, 255, 0.8);" text="Menu" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="35.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="773.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@shopping-cart.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="686.0" layoutY="185.0" prefHeight="50.0" prefWidth="74.0" style="-fx-background-color: rgba(97, 56, 255, 0.8);" text="Cart" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="35.0" />
+               </font>
+            </Label>
+            <TableView fx:id="menuTableView" layoutX="16.0" layoutY="256.0" prefHeight="400.0" prefWidth="480.0">
+              <columns>
+                <TableColumn fx:id="categoryColumn" prefWidth="82.0" text="Category" />
+                <TableColumn fx:id="nameColumn" prefWidth="91.0" text="Name" />
+                <TableColumn fx:id="changesColumn" prefWidth="259.0" text="Changes" />
+                <TableColumn fx:id="priceColumn" prefWidth="47.0" text="Price" />
+              </columns>
+               <effect>
+                  <DropShadow color="#00000040" height="10.0" radius="4.5" width="10.0" />
+               </effect>
+            </TableView>
+            <TableView fx:id="cartTableView" layoutX="514.0" layoutY="256.0" prefHeight="400.0" prefWidth="480.0">
+              <columns>
+                <TableColumn fx:id="cartItemNameColumn" prefWidth="100.0" text="Item Name" />
+                <TableColumn fx:id="cartChangesColumn" prefWidth="320.0" text="Changes" />
+                <TableColumn fx:id="cartPriceColumn" prefWidth="60.0" text="Price" />
+              </columns>
+               <effect>
+                  <DropShadow color="#00000040" height="10.0" radius="4.5" width="10.0" />
+               </effect>
+            </TableView>
+            <Label layoutX="650.0" layoutY="670.0" prefHeight="24.0" prefWidth="113.0" text="Total Price:" textFill="#8160ff">
+               <font>
+                  <Font name="Segoe UI Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalPriceLabel" layoutX="774.0" layoutY="670.0" prefHeight="24.0" prefWidth="62.0" text="0.00" textFill="#8160ff">
+               <font>
+                  <Font name="Segoe UI Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="840.0" layoutY="669.0" text="💲" textFill="#8160ff">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="addItemButton" layoutX="181.0" layoutY="722.0" mnemonicParsing="false" onAction="#handleAddItem" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #8160ff; -fx-text-fill: white; -fx-background-radius: 5;" text="Add item">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#00ff40" height="32.0" radius="15.5" spread="0.2" width="32.0" />
+               </effect>
+            </Button>
+            <Button fx:id="removeItemButton" layoutX="679.0" layoutY="722.0" mnemonicParsing="false" onAction="#handleRemoveItem" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #8160ff; -fx-text-fill: white; -fx-background-radius: 5;" text="Remove item">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow color="RED" height="32.0" radius="15.5" spread="0.2" width="32.0" />
+               </effect>
+            </Button>
+            <Button layoutX="18.0" layoutY="824.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #8160ff; -fx-text-fill: white; -fx-background-radius: 5;" text="⬅ Back">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#00000040" height="5.0" radius="2.0" width="5.0" />
+               </effect>
+            </Button>
+            <Button layoutX="896.0" layoutY="824.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #8160ff; -fx-text-fill: white; -fx-background-radius: 5;" text="Next ⮕">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#00000040" height="5.0" radius="2.0" width="5.0" />
+               </effect>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
